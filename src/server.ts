@@ -1,22 +1,13 @@
-import {
-  AlbumController,
-  ArtistController,
-  SearchController,
-  SongController
-} from '#modules/index'
+import process from 'node:process'
+import { serve } from '@hono/node-server'
 
-import { PlaylistController } from '#modules/playlists/controllers'
-import { ContentController } from '#modules/content/controllers'
+import app from './index.js'
 
-import { App } from './app'
+const port = Number(process.env.PORT) || 3000
 
-const app = new App([
-  new SearchController(),
-  new SongController(),
-  new AlbumController(),
-  new ArtistController(),
-  new PlaylistController(),
-  new ContentController()
-]).getApp()
+serve({
+  fetch: app.fetch,
+  port
+})
 
-export default app
+console.log(`Server running on port ${port}`)

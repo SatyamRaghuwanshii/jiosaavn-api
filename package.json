@@ -28,8 +28,8 @@
   },
   "scripts": {
     "dev": "bun --watch src/server.ts",
-    "start": "bun dist/server.js",
-    "prebuild": "rm -rf dist",
+    "start": "node dist/server.js",
+    "prebuild": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "build": "tsc && tsc-alias",
     "format": "prettier --write \"./**/*.{js,ts,json}\"",
     "lint": "eslint .",
