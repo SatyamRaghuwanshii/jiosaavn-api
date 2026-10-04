@@ -37,7 +37,7 @@ export class ContentController {
       async (ctx) => {
         const { data } = await useFetch<any>({
           endpoint: Endpoints.trending,
-          params:{}
+          params: {}
         })
 
         return ctx.json({

@@ -1,9 +1,4 @@
-import {
-  AlbumController,
-  ArtistController,
-  SearchController,
-  SongController
-} from './modules/index.js'
+import { AlbumController, ArtistController, SearchController, SongController } from './modules/index.js'
 
 import { PlaylistController } from './modules/playlists/controllers/index.js'
 import { ContentController } from './modules/content/controllers/index.js'
